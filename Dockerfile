@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget https://dl.ubnt.com/unifi-voip/1.0.4-xb36bd/unifi_voip_sysvinit_all.deb && \
+RUN wget https://dl.ubnt.com/unifi-voip/1.0.5-kxe7d9/unifi_voip_sysvinit_all.deb && \
     dpkg -i unifi_voip_sysvinit_all.deb && \
     rm unifi_voip_sysvinit_all.deb
 
@@ -28,3 +28,4 @@ WORKDIR /var/lib/unifi-voip
 
 ENTRYPOINT ["/usr/bin/java", "-Xmx1024M", "-jar", "/usr/lib/unifi-voip/lib/ace.jar"]
 CMD ["start"]
+
