@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Stuart Clark <stu@rtclark.net>
+MAINTAINER fia5000
 
 VOLUME ["/var/lib/unifi-voip", "/var/log/unifi-voip", "/var/run/unifi-voip", "/usr/lib/unifi-voip/work"]
 
@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget https://dl.ubnt.com/unifi-voip/1.0.5-kxe7d9/unifi_voip_sysvinit_all.deb && \
+RUN wget http://dl-origin.ubnt.com/unifi-voip/1.0.6-vfy6nm/unifi_voip_sysvinit_all.deb && \
     dpkg -i unifi_voip_sysvinit_all.deb && \
     rm unifi_voip_sysvinit_all.deb
 
